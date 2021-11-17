@@ -1,0 +1,23 @@
+set encoding=utf-8
+set nocompatible
+set encoding=utf-8
+set fileencodings=utf-8
+set background=dark
+syntax on
+set number
+set tabstop=4
+set autoindent
+set expandtab
+set softtabstop=4
+set cursorline
+
+set showcmd
+set showmode
+set showmatch
+
+set hlsearch
+set smartcase
+set ignorecase
+set incsearch
+
+set ruler

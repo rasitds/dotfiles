@@ -1,7 +1,7 @@
-cp ~/.bashrc files/bashrc
-cp ~/.Xresources files/Xresources
-cp ~/.vimrc files/vimrc
-cp ~/.config/i3/config files/i3_config
-cp ~/.config/i3status/config files/i3status_config
-cp /etc/httpd/conf/httpd.conf files/httpd.conf
-cp /etc/php/php.ini files/php.ini
+cp ~/.bashrc dotfiles/bashrc
+cp ~/.Xresources dotfiles/Xresources
+cp ~/.vimrc dotfiles/vimrc
+cp ~/.config/i3/config dotfiles/i3_config
+cp ~/.config/i3status/config dotfiles/i3status_config
+cp /etc/httpd/conf/httpd.conf dotfiles/httpd.conf
+cp /etc/php/php.ini dotfiles/php.ini

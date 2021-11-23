@@ -1,3 +1,5 @@
+URxvt.scrollBar: false
+
 ! Special
 *background:    #1e2832
 !*background:    #0c0c0c
@@ -17,8 +19,10 @@
 !*color9: #927a90
 
 ! Green
-*color2: #3a6469
-*color10: #5a9295
+!*color2: #3a6469
+!*color10: #5a9295
+*color2: #00ff00
+*color10: #00ff00
 
 ! Yellow
 *color3: #a5b0aa

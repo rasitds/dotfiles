@@ -49,3 +49,16 @@ pacman -Sy xf86-video-$video_driver
 echo 'Installing packages'
 echo 'RUN pacman -Sy xterm i3 firefox rofi git neovim pulseaudio pavucontrol'
 pacman -Sy xterm i3 firefox rofi git neovim pulseaudio pavucontrol
+
+cp home/bashrc ~/.bashrc
+cp home/Xresources ~/.Xresources
+cp home/xinitrc ~/.xinitrc
+xrdb -merge ~/.Xresources
+
+cp home/vimrc ~/.vimrc
+cp -R home/config/nvim ~/.config/nvim
+
+cp home/i3/config ~/.config/i3/config
+cp home/i3status_config ~/.config/i3status/config
+
+cp home/gitconfig ~/.gitconfig

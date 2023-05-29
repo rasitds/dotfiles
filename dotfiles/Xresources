@@ -1,57 +1,22 @@
-URxvt.scrollBar: false
+#if __has_include(".extend.Xresources")
+#include ".extend.Xresources"
+#endif
 
-! Special
-*background:    #1e2832
-!*background:    #0c0c0c
-!orj*foreground:    #caf0ec
-!*foreground:    #1976D2
-*foreground:   #cfcfcf
-!orj*.cursorColor:  #4a3139
-!*.cursorColor: #2979FF
-*.cursorColor: #ffffff
+! ^ The above lines are no comments!
+! Leave them as they are if a file ~/.extend.Xresources is being used on your system.
+! config can be added there or also here below.
+! For comments use "!"
 
-! Black
-*color0: #353e47
-*color8: #59626b
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
 
-! Red
-!*color1: #675665
-!*color9: #927a90
-
-! Green
-!*color2: #3a6469
-!*color10: #5a9295
-*color2: #00ff00
-*color10: #00ff00
-
-! Yellow
-*color3: #a5b0aa
-*color11: #e1f0e4
-
-! Blue
-!orj*color4: #515e71
-!*color4: #ffff00
-!orj*color12: #6e7f99
-!*color12: #ffff00
-!*color4: #e8e8e8
-!*color12: #e8e8e8
-*color4: #64B5F6
-*color12: #64B5F6
-
-! Magenta
-*color5:  #636d73
-*color13: #81779d
-
-! Cyan
-!*color6: #2b908c
-!*color14: #3bc7bc
-
-! White
-*color7:  #bdb8c1
-*color15: #ebcbde
-
-! Rofi
-!rofi.color-normal: argb:00000000, #515e71, argb:00000000, #1e2832,#2b908c
-!rofi.color-urgent: argb:00000000, #00ff00, argb:00000000, #110000,#fae1ee
-!rofi.color-active: argb:00000000, #0000ff, argb:00000000, #000011,#caf0ec
-!rofi.color-window: argb:ff1e2832, #515e71, #3bc7bc
+XTerm*background: #2b2b2b
+XTerm*foreground: #e7e7e7
+XTerm*pointerColor: #16A085
+XTerm*faceName: Fixed
+XTerm*faceSize: 11

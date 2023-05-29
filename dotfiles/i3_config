@@ -14,8 +14,8 @@ font pango:ohsnap 9
 workspace_layout default 
 
 # gaps 
-set $default_gaps_inner 20
-set $default_gaps_outer 7
+set $default_gaps_inner 4
+set $default_gaps_outer 4
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 smart_gaps on
@@ -26,12 +26,32 @@ for_window [class="^.*"] border pixel 2
 new_window pixel 1
 new_float pixel 1
 
-# class                 border  backgr. text    indicator
-client.focused          #000000 #64B5F6 #000000 #FFFF00
-client.focused_inactive #000000 #000000 #FFFFFF #000000
-client.unfocused        #000000 #000000 #FFFFFF #000000
-client.urgent           #000000 #000000 #ffffff #000000
-client.placeholder      #000000 #000000 #ffffff #000000
+# Colors set from ~/.Xresources
+set_from_resource	$background	background
+set_from_resource	$foreground	foreground
+set_from_resource	$color0		color0
+set_from_resource 	$color1 	color1
+set_from_resource 	$color2 	color2
+set_from_resource 	$color3 	color3
+set_from_resource 	$color4 	color4
+set_from_resource 	$color5 	color5
+set_from_resource 	$color6		color6
+set_from_resource	$color7		color7
+set_from_resource	$color8		color8
+set_from_resource	$color9		color9
+set_from_resource	$color10	color10
+set_from_resource	$color11	color11
+set_from_resource	$color12	color12
+set_from_resource	$color13	color13
+set_from_resource	$color14	color14
+set_from_resource	$color15	color15
+
+client.focused          $color5 #000000 $color5 #272827 #272827
+client.focused_inactive $color5 #000000 $color5 #272827 #272827
+client.unfocused        $color5 #000000 #657b83 #272827 #272827
+client.urgent           $color5 #000000 #657b83 #272827 #272827
+client.placeholder      $color5 #000000 #657b83 #272827 #272827
+client.background       #000000
 
 # Rofi
 #bindsym $mod+d exec --no-startup-id /usr/bin/rofi -show drun -width 400 -lines 5 -font "Ohsnap 9" -hide-scrollbar -glob -separator-style "dash" 
@@ -98,15 +118,15 @@ bindsym $mod+q focus parent
 
 # set workspace
 set $workspace1 "0001"
-set $workspace2 "0010"
-set $workspace3 "0100"
-set $workspace4 "1000"
-set $workspace5 "0101"
-set $workspace6 "0110"
-set $workspace7 "1100"
-set $workspace8 "1101"
-set $workspace9 "1110"
-set $workspace10 "1111"
+set $workspace2 "0002"
+set $workspace3 "0003"
+set $workspace4 "0004"
+set $workspace5 "0005"
+set $workspace6 "0006"
+set $workspace7 "0007"
+set $workspace8 "0008"
+set $workspace9 "0009"
+set $workspace10 "0010"
 
 # switch to workspace
 bindsym $mod+1 workspace number $workspace1
@@ -176,13 +196,11 @@ bar {
 		inactive_workspace #000000 #000000 #FFFFFF
 		urgent_workspace   #000000 #CB4F29 #FFFFFF  
 	}
-	status_command i3status
-	mode hide
-   	position bottom
-	output primary
-	workspace_buttons no    
+	#status_command i3status
+   	#position bottom
+	#output primary
 	font pango:Ohsnap 7
-	separator_symbol "/"
+	#separator_symbol "/"
 }
 
 bindsym Print exec "scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Pictures/shots' -s"

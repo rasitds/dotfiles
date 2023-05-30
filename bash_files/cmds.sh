@@ -8,3 +8,4 @@ sudo pacman -S xautolock
 sudo pacman -S inetutils
 sudo sync; echo 3 > /proc/sys/vm/drop_caches
 xrdb -merge ~/.Xresources
+

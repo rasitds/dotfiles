@@ -18,5 +18,37 @@ Xft.lcdfilter: lcddefault
 XTerm*background: #2b2b2b
 XTerm*foreground: #e7e7e7
 XTerm*pointerColor: #16A085
+: XTerm*color1: #D03030
+XTerm*color1: #00FF00
 XTerm*faceName: Fixed
 XTerm*faceSize: 11
+
+! Colorscheme
+*foreground: #E5D2A5
+*background: #181512
+! Black Black !
+*color0: #252525
+*color8: #454545
+! Red Red !
+*color1: #CB4F29
+*color9: #CB4F29
+! Green Green !
+*color2: #A2B272
+*color10: #B9C88E
+! Yellow Yellow!
+*color3: #FFEB65
+*color11: #FFEB65
+! Blue Blue !
+*color4: #7A9388
+*color12: #94B1A3
+! Magenta Magenta
+*color5: #CB4F29
+*color13: #CB4F29
+!*color5: #F79F81 
+!*color13: #F79F81
+! Cyan Cyan !
+*color6: #767D75
+*color14: #9DA69E
+! White White !
+*color7: #F9F9F9
+*color15: #F9F9F9

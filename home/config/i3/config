@@ -15,14 +15,14 @@ workspace_layout default
 
 # gaps 
 set $default_gaps_inner 4
-set $default_gaps_outer 4
+set $default_gaps_outer 1
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 smart_gaps on
 smart_borders on
 
 # borders 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 new_window pixel 1
 new_float pixel 1
 
@@ -45,12 +45,13 @@ set_from_resource	$color12	color12
 set_from_resource	$color13	color13
 set_from_resource	$color14	color14
 set_from_resource	$color15	color15
-
-client.focused          $color5 #000000 $color5 #272827 #272827
-client.focused_inactive $color5 #000000 $color5 #272827 #272827
-client.unfocused        $color5 #000000 #657b83 #272827 #272827
-client.urgent           $color5 #000000 #657b83 #272827 #272827
-client.placeholder      $color5 #000000 #657b83 #272827 #272827
+set $test #FFFFFF
+set $test2 #000000
+client.focused          $test $color5 $color2 $test $test
+client.focused_inactive $color1 $color6 $color1 $test $test2
+client.unfocused        $color2 $color7 #657b83 $test $test2
+client.urgent           $color3 $color8 #657b83 $test $test2
+client.placeholder      $color4 $color9 #657b83 $test $test2
 client.background       #000000
 
 # Rofi
@@ -60,12 +61,6 @@ bindsym $mod+d exec --no-startup-id rofi -theme solarized -font "hack 10" -show 
 # start a terminal
 bindsym $mod+Return exec xterm -ls -xrm 'XTerm*selectToClipboard: true'&
 
-# autostart programs
-exec --no-startup-id xrdb -load ~/.Xdefaults
-#exec --no-startup-id compton
-#exec --no-startup-id dropbox start
-exec --no-startup-id dbus-launch i3
-#exec feh --bg-fill ~/Images/Feh
 bindsym $mod+Shift+l exec --no-startup-id i3lock-fancy -p -t null
 
 # start programs shortcuts
@@ -187,6 +182,11 @@ bindsym $mod+m bar mode invisible
 bindsym $mod+Shift+M bar mode dock
 
 bar {
+	status_command i3status
+	separator_symbol "/"
+	#position bottom
+	#output primary
+	font pango:Ohsnap 7
 	colors {
 		statusline #FFFFFF
 		background #000000
@@ -196,14 +196,17 @@ bar {
 		inactive_workspace #000000 #000000 #FFFFFF
 		urgent_workspace   #000000 #CB4F29 #FFFFFF  
 	}
-	#status_command i3status
-   	#position bottom
-	#output primary
-	font pango:Ohsnap 7
-	#separator_symbol "/"
 }
 
 bindsym Print exec "scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Pictures/shots' -s"
 bindsym Shift+Print exec scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Pictures/shots'
 
 assign [class="Files"] $workspace8
+
+# autostart programs
+exec --no-startup-id xrdb -load ~/.Xdefaults
+#exec --no-startup-id compton
+#exec --no-startup-id dropbox start
+exec --no-startup-id dbus-launch i3
+exec xrandr --output Virtual-1 --mode 1920x1080
+exec feh --bg-fill ~/startrail.jpg

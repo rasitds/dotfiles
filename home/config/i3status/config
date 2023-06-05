@@ -11,8 +11,8 @@ general {
 	output_format = "i3bar"
         colors = true
 	color_good = "#BBBBBB"
-	color_bad = "#CC1616"
-	color_degraded = "#55858E"
+	color_bad = "#FF0000"
+	color_degraded = "#FFb900"
         interval = 5
 }
 
@@ -20,11 +20,11 @@ order += "volume master"
 order += "ipv6"
 order += "wireless _first_"
 order += "ethernet _first_"
-order += "battery all"
+#order += "battery all"
 order += "disk /"
 order += "cpu_usage"
 order += "load"
-order += "cpu_temperature 0"
+#order += "cpu_temperature 0"
 order += "memory"
 order += "tztime local"
 
@@ -56,16 +56,16 @@ battery all {
 }
 
 disk "/" {
-        format = "%avail"
+        format = "DISK %avail"
 }
 
 cpu_usage {
-	format = "CPU %usage <%cpu0 %cpu1>"
+	format = "CPU (%usage <%cpu0 %cpu1>)"
 	max_threshold = 75
 }
 
 load {
-        format = "%1min"
+        format = "LOAD %1min"
 }
 
 cpu_temperature 0 {
@@ -74,9 +74,9 @@ cpu_temperature 0 {
 }
 
 memory {
-        format = "%used | %available"
+        format = "RAM (%used < %available)"
         threshold_degraded = "1G"
-        format_degraded = "M < %available"
+        format_degraded = "RAM (1G < %available)"
 }
 
 tztime local {

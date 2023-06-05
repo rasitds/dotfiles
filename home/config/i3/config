@@ -45,14 +45,14 @@ set_from_resource	$color12	color12
 set_from_resource	$color13	color13
 set_from_resource	$color14	color14
 set_from_resource	$color15	color15
-set $test #FFFFFF
-set $test2 #000000
-client.focused          $test $color5 $color2 $test $test
-client.focused_inactive $color1 $color6 $color1 $test $test2
-client.unfocused        $color2 $color7 #657b83 $test $test2
-client.urgent           $color3 $color8 #657b83 $test $test2
-client.placeholder      $color4 $color9 #657b83 $test $test2
-client.background       #000000
+set $white #FFFFFF
+set $black #000000
+client.focused          $white $color5 $color2 $white $white
+client.focused_inactive $color1 $color6 $color1 $white $black
+client.unfocused        $color2 $color7 #657b83 $white $black
+client.urgent           $color3 $color8 #657b83 $white $black
+client.placeholder      $color4 $color9 #657b83 $white $black
+client.background       $black
 
 # Rofi
 #bindsym $mod+d exec --no-startup-id /usr/bin/rofi -show drun -width 400 -lines 5 -font "Ohsnap 9" -hide-scrollbar -glob -separator-style "dash" 
@@ -188,13 +188,13 @@ bar {
 	#output primary
 	font pango:Ohsnap 7
 	colors {
-		statusline #FFFFFF
-		background #000000
+		statusline $white
+		background $black
 		#Border #Backgr #Font
-		focused_workspace  #000000 #FFFFFF #000000
-		active_workspace   #000000 #000000 #FFFFFF
-		inactive_workspace #000000 #000000 #FFFFFF
-		urgent_workspace   #000000 #CB4F29 #FFFFFF  
+		focused_workspace  $black $white $black
+		active_workspace   $black $black $white
+		inactive_workspace $black $black $white
+		urgent_workspace   $black #CB4F29 $white  
 	}
 }
 

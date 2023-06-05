@@ -5,6 +5,6 @@ cp ~/.xinitrc home/xinitrc
 cp ~/.config/i3/config home/config/i3/config
 cp ~/.config/i3status/config home/config/i3status/config
 
-cp -R ~/.config/nvim home/config/nvim
+cp ~/.config/nvim/init.vim home/config/nvim/init.vim
 
 cp ~/.gitconfig home/gitconfig

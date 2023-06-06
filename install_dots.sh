@@ -14,4 +14,6 @@ cp home/config/i3status/config ~/.config/i3status/config
 
 cp home/gitconfig ~/.gitconfig
 
-startx
+echo '- COPYING CONFIG FILES COMPLETED.'
+sleep 2
+echo "Please log out of the '$USER' user with the \"exit\" command, log back in and then run the \"startx\" command."

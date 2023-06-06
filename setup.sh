@@ -31,6 +31,8 @@ echo '- Setup User'
 read -p "Enter a login name: " login_name
 echo "RUN useradd -m -G audio,video $login_name"
 useradd -m -G audio,video $login_name
+echo "- SET PASSWORD FOR \"$login_name\""
+passwd $login_name
 
 echo '- COPYING CONFIG FILES'
 

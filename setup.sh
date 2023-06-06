@@ -28,21 +28,29 @@ echo 'RUN systemctl enable systemd-networkd.service'
 systemctl enable systemd-networkd.service
 
 echo '- Setup User'
-read -p "Enter an login name: " login_name
+read -p "Enter a login name: " login_name
 echo "RUN useradd -m -G audio,video $login_name"
 useradd -m -G audio,video $login_name
+
+echo '- COPYING CONFIG FILES'
+
 echo "RUN cp -R home /home/$login_name"
 cp -R home /home/$login_name
+echo "RUN chown -R $login_name /home/$login_name/home"
+chown -R $login_name /home/$login_name/home
 echo "RUN cp install_dots.sh /home/$login_name"
 cp install_dots.sh /home/$login_name
+echo "RUN chown $login_name /home/$login_name/install_dots.sh"
+chown $login_name /home/$login_name/install_dots.sh
 echo "RUN chmod -x /home/$login_name/install_dots.sh"
 chmod +x /home/$login_name/install_dots.sh
 
-echo 'RUN ./install_pkgs.sh'
-./install_pkgs.sh
+sleep 4
+
+echo 'RUN sh install_pkgs.sh'
+sh install_pkgs.sh
+
+echo "- SWITCHING USER. PLEASE RUN the \"sh install_dots.sh\" command when you log in $login_name"
 
 echo "RUN su - $login_name"
 su - $login_name
-
-echo 'RUN ./install_dots.sh'
-./install_dots.sh

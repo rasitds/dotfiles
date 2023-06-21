@@ -19,5 +19,5 @@ echo "- RUN pacman -Sy xf86-video-$video_driver"
 pacman -Sy xf86-video-$video_driver
 
 echo 'Installing packages'
-echo 'RUN pacman -Sy xterm i3 firefox rofi git neovim pulseaudio pavucontrol'
-pacman -Sy xterm i3 firefox rofi git neovim pulseaudio pavucontrol
+echo 'RUN pacman -Sy xterm i3 firefox rofi git neovim pulseaudio pavucontrol ranger'
+pacman -Sy xterm i3 firefox rofi git neovim pulseaudio pavucontrol ranger
